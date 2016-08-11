@@ -182,6 +182,12 @@ func (p *Process) Ready() <-chan state.DatabaseEvent {
 	return p.events
 }
 
+func (p *Process) DefaultTunables() state.Tunables {
+	return state.Tunables{
+		Version: 1,
+	}
+}
+
 func (p *Process) XLog() xlog.XLog {
 	return mdbxlog.MDBXLog{}
 }
